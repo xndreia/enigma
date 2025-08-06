@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Você é minha calmaria</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #4b0082, #20004f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    h1 {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      max-width: 800px;
+      line-height: 1.8;
+      margin: 20px auto;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: #ff69b4;
+      transform: rotate(-45deg);
+      animation: float 10s infinite ease-in;
+      z-index: -1;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(-45deg);
+        opacity: 0;
+      }
+      50% { opacity: 1; }
+      100% {
+        transform: translateY(-10vh) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Estilo do botão */
+    .botao-proximo {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 30px;
+      background: #ff69b4;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,105,180,0.5);
+      transition: 0.3s;
+    }
+
+    .botao-proximo:hover {
+      background: #ff85c1;
+      box-shadow: 0 0 25px rgba(255,105,180,0.8);
+    }
+  </style>
+</head>
+<body>
+  <h1>Você é minha calmaria</h1>
+
+  <p>Meu amor,<br><br>
+  Eu não sei se consigo colocar em palavras tudo o que sinto por você, mas hoje preciso tentar.
+  Desde que você entrou na minha vida, tudo mudou.</p>
+
+  <p>Você me mostrou o que é amar de verdade, o que é sentir paz só por estar ao lado de alguém. 
+  Antes de você, eu não sabia que o amor podia ser assim: tão intenso, tão seguro, tão nosso.</p>
+
+  <p>Você é meu abrigo nos dias difíceis e meu riso nos dias bons. É para você que meu coração corre, 
+  mesmo quando o mundo parece desmoronar. É com você que eu aprendi que o amor não é só sobre momentos felizes, 
+  mas sobre escolher todos os dias caminhar juntos, mesmo quando o caminho não é fácil.</p>
+
+  <p>Eu quero que você saiba que cada batida do meu coração chama pelo seu nome.</p>
+
+  <p>Quero estar ao seu lado nos dias de sol e nos dias de tempestade, porque eu sei que juntos podemos tudo. 
+  Você é meu melhor amigo, meu amor, meu lar. E se eu pudesse te mostrar minha alma agora, 
+  você veria que ela é inteiramente sua.</p>
+
+  <p>Se um dia você tiver dúvidas, se um dia o mundo tentar nos afastar, lembra disso: 
+  eu sou e sempre serei a pessoa que vai te amar com toda a intensidade que existe em mim.
+  Você é, e sempre será, o amor da minha vida.</p>
+
+  <p>Para sempre sua,<br>-A</p>
+
+  <!-- Botão para próxima página -->
+  <a href="enigma.html" class="botao-proximo">Ir para o próximo enigma ❤️</a>
+
+  <!-- Gera vários corações -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.animationDuration = `${5 + Math.random() * 5}s`;
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>

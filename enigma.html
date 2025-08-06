@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Enigma Final</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdf6e3;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #444;
+      margin-bottom: 30px;
+    }
+    .morse {
+      font-family: monospace;
+      font-size: 20px;
+      margin: 30px 0;
+      background: #fff;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .senha {
+      margin: 20px 0;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #mensagemSucesso {
+      display: none;
+      margin-top: 20px;
+      font-size: 22px;
+      color: green;
+      font-weight: bold;
+    }
+    .imagens-container {
+      display: none;
+      justify-content: center;
+      gap: 20px; /* espaço entre as imagens */
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .imagens-container img {
+      max-width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="titulo">🔐 Digite a senha para continuar</h1>
+  
+  <!-- Morse principal -->
+  <div class="morse" id="morsePrincipal">
+    -. . -- / ... . -- .--. . / - ..- -.. --- / . ... -.-. . / --- / --.- ..- . / .--. .- .-. . -.-. . / -- .- ... / .--- ..- -. - --- ... --..-- / - ..- -.. --- / --. .- -. .... .- / ... . -. - .. -.. ---
+  </div>
+  
+  <div class="senha" id="senhaBox">
+    <input type="text" id="senhaInput" placeholder="Digite a senha aqui">
+    <button onclick="verificarSenha()">Enviar</button>
+  </div>
+
+  <p id="mensagemSucesso">✅ Senha correta! ❤️🥰😘🥳😍😘🥰🥳🤩😜</p>
+  
+  <!-- Container das imagens lado a lado -->
+  <div class="imagens-container" id="imagensContainer">
+    <img src="imagem1.jpg" alt="Imagem 1">
+    <img src="imagem2.jpg" alt="Imagem 2">
+  </div>
+  
+  <!-- Morse pequeno no rodapé -->
+  <footer id="morsePequeno">
+    ...- .- / .- - . / --- / ... . ..- / . -- .- .. .-.. .-.-.-
+  </footer>
+
+  <script>
+    function verificarSenha() {
+      const senhaCorreta = "tambem com esse peru grosso";
+      const input = document.getElementById("senhaInput").value.trim().toLowerCase();
+      const mensagem = document.getElementById("mensagemSucesso");
+      const senhaBox = document.getElementById("senhaBox");
+      const imagens = document.getElementById("imagensContainer");
+
+      if (input === senhaCorreta.toLowerCase()) {
+        mensagem.style.display = "block";
+        senhaBox.style.display = "none";
+        imagens.style.display = "flex"; // mostra as imagens lado a lado
+
+        // Esconde o título, morse e rodapé
+        document.getElementById("titulo").style.display = "none";
+        document.getElementById("morsePrincipal").style.display = "none";
+        document.getElementById("morsePequeno").style.display = "none";
+      } else {
+        alert("Senha incorreta! Tente novamente.");
+      }
+    }
+  </script>
+
+</body>
+</html>
